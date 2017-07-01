@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SimpleCam</string>
+    <string name="action_settings">Ρυθμίσεις</string>
+    <string name="auto_flash">Φλάς auto</string>
+    <string name="flash_on">Φλάς on</string>
+    <string name="flash_off">Φλάς off</string>
+    <string name="front_cam">front camera</string>
+    <string name="back_cam">back camera</string>
+    <string name="auto_focus">auto focus on</string>
+    <string name="auto_focus_off">auto focus off</string>
+    <string name="cam_effects">Εφέ</string>
+    <string name="scenes">Σκηνικά</string>
+    <string name="deletephoto">Διαγραφή εικόνας?</string>
+    <string name="yes">ναι</string>
+    <string name="no">οχι</string>
+    <string name="gridview">grid view</string>
+    <string name="crop">κοψιμο</string>
+    <string name="cancel">cancel</string>
+
+    <string-array name="drawervalues">
+        <item>Ανάλυση</item>
+        <item>Εφέ</item>
+        <item>Σκηνικά</item>
+    </string-array>
+
+
+
+    <array name="nav_drawer_icons">
+        <item>@drawable/resicon</item>
+        <item>@drawable/effecticon</item>
+        <item>@drawable/sceneicon</item>
+        <item>@drawable/gui_almalence_settings_flash_auto</item>
+        <item>@drawable/gui_almalence_settings_flash_off</item>
+        <item>@drawable/gui_almalence_settings_flash_on</item>
+        <item>@drawable/gui_almalence_settings_flash_torch</item>
+        <item>@drawable/refresh</item>
+        <item>@drawable/choose</item>
+        <item>@drawable/selected</item>
+        <item>@drawable/ic_center_focus_weak_white_24dp</item>
+    </array>
+
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+
+</resources>

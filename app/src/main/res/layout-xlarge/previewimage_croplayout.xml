@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#2c4256"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            >
+
+            <ImageButton
+                android:layout_width="65dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:onClick="rotateLeft"
+                android:id="@+id/rotateleftbutton"
+                android:src="@drawable/object_rotate_left"
+                android:scaleType="centerInside"
+                android:padding="3dp"
+                android:background="#61030303"
+                />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:text="@string/crop"
+                android:id="@+id/crop_button"
+                android:onClick="crop"
+                android:src="@android:drawable/ic_menu_crop"
+                android:background="#61030303"
+                />
+
+            <ImageButton
+                android:layout_width="65dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:onClick="rotateRight"
+                android:id="@+id/rotaterightbutton"
+                android:src="@drawable/object_rotate_right"
+                android:scaleType="centerInside"
+                android:padding="3dp"
+                android:background="#61030303"
+                />
+
+
+        </LinearLayout>
+
+
+
+
+        <com.isseiaoki.simplecropview.CropImageView
+            android:id="@+id/cropImageView"
+            xmlns:custom="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#17314b"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout android:layout_weight="0.3" android:layout_height="fill_parent" android:layout_width="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_above="@+id/settings"
+                android:layout_gravity="center"
+                >
+
+                <ImageView
+                    android:layout_width="350dp"
+                    android:layout_height="400dp"
+                    android:id="@+id/image"
+                    android:layout_gravity="center"
+                    />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="0.7"
+        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/pixelatebackground"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/settings"
+            android:layout_gravity="center"
+            >
+
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekBarRes"
+                android:layout_gravity="center_horizontal"
+                android:max="30"
+                />
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekBarSize"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="13dp"
+                android:max="30"
+                />
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekBarOffSet"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="5dp"
+                android:max="20"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout >

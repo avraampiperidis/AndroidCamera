@@ -1,0 +1,201 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/camerapreview"
+        android:layout_weight="1"
+        android:scaleType="center"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:id="@+id/linearimagepreview"
+            android:orientation="vertical"
+            >
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="45dp"
+                android:id="@+id/progressbar"
+                />
+
+
+            <ImageView
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:id="@+id/imageview"
+                android:onClick="imagepreview"
+                android:layout_gravity="right"
+                android:layout_marginTop="17dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="30dp"
+                android:scaleType="center"
+                android:background="@drawable/ic_menu_gallery">
+
+            </ImageView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginBottom="70dp"
+            android:id="@+id/recstatus"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ff0000"
+                android:textSize="33dp"
+                android:id="@+id/recordtext"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearbottom"
+            android:paddingTop="18dp"
+            android:paddingBottom="25dp"
+            android:background="#e7030303"
+            android:layout_gravity="bottom|center"
+            >
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom|center"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circleout"
+                    android:padding="7dp"
+                    android:layout_marginRight="35dp"
+                    >
+                    <View
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/recbutton"
+                        android:onClick="recvideo"
+                        android:layout_gravity="bottom"
+                        android:scaleType="center"
+                        android:background="@drawable/circleinvideo"
+                         />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circleout"
+                    android:padding="4dp"
+                    android:layout_marginLeft="20dp"
+                    >
+
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/capturebutton"
+                        android:onClick="imagecapture"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="10dp"
+                        android:scaleType="center"
+                        android:background="@drawable/circleinpicture"
+                         />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:id="@+id/optionsbuttonlayout"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|left"
+            android:background="#17030303"
+            >
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_menu_preferences"
+                android:id="@+id/optionbutton"
+                android:onClick="optionclick"
+                android:layout_gravity="top|left"
+                android:layout_margin="20dp"
+                 />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:id="@+id/txt2"
+                android:textSize="18dp"
+                android:text="0"
+                android:textStyle="bold"
+                android:textColor="#05c40b" />
+
+            <ImageView
+                android:id="@+id/changecamerabutton"
+                android:layout_width="40dp"
+                android:onClick="changeCamera"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/camera_switch" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:onClick="showFlashOptions"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/gui_almalence_settings_flash_off" />
+
+        </LinearLayout>
+
+
+
+
+        </FrameLayout>
+
+
+
+        <ListView android:id="@+id/list_slidermenu"
+            android:layout_width="255dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:choiceMode="singleChoice"
+            android:divider="#6aaff5"
+            android:dividerHeight="1dp"
+            android:background="#9b111111"/>
+
+
+
+</android.support.v4.widget.DrawerLayout>
+
+

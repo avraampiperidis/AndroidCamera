@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SimpleCam</string>
+    <string name="action_settings">Settings</string>
+    <string name="auto_flash">flash auto</string>
+    <string name="flash_on">flash on</string>
+    <string name="flash_off">flash off</string>
+    <string name="front_cam">front camera</string>
+    <string name="back_cam">back camera</string>
+    <string name="auto_focus">auto focus on</string>
+    <string name="auto_focus_off">auto focus off</string>
+    <string name="cam_effects">effects</string>
+    <string name="scenes">scenes</string>
+    <string name="deletephoto">delete image?</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="cancel">cancel</string>
+    <string name="gridview">grid view</string>
+    <string name="crop">crop</string>
+
+    <string-array name="drawervalues">
+        <item>Resolution</item>
+        <item>Effects</item>
+        <item>Scenes</item>
+    </string-array>
+
+
+
+    <array name="nav_drawer_icons">
+        <item>@drawable/resicon</item>
+        <item>@drawable/effecticon</item>
+        <item>@drawable/sceneicon</item>
+        <item>@drawable/gui_almalence_settings_flash_auto</item>
+        <item>@drawable/gui_almalence_settings_flash_off</item>
+        <item>@drawable/gui_almalence_settings_flash_on</item>
+        <item>@drawable/gui_almalence_settings_flash_torch</item>
+        <item>@drawable/refresh</item>
+        <item>@drawable/choose</item>
+        <item>@drawable/selected</item>
+        <item>@drawable/ic_center_focus_weak_white_24dp</item>
+    </array>
+
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+
+</resources>

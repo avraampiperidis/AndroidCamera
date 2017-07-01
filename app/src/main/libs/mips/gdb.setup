@@ -1,0 +1,2 @@
+set solib-search-path C:/Users/abraham/AndroidStudioProjects/simplecam/app/src/main/obj/local/mips
+directory C:/Users/abraham/AppData/Local/Android/sdk/ndk-bundle/build//../platforms/android-24/arch-mips/usr/include C:/Users/abraham/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/system/include C:/Users/abraham/AndroidStudioProjects/simplecam/app/src/main/jni

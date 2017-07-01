@@ -1,0 +1,3 @@
+include ':app' , ':library-recyclerview', ':library'
+project(':library-recyclerview').projectDir = new File('app/libs/jazzylistview/library-recyclerview')
+project(':library').projectDir = new File('app/libs/jazzylistview/library')

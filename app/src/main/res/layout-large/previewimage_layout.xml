@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#17314b"
+    >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/camerapreview"
+        android:layout_weight="1"
+        >
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:id="@+id/optionsbuttonlayout"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:background="#21030303"
+            android:orientation="horizontal"
+            >
+
+
+            <ImageView
+                android:layout_width="45dp"
+                android:onClick="action_crop"
+                android:id="@+id/crop_button"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:background="@drawable/ic_crop_rotate_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:onClick="editimage"
+                android:id="@+id/edit_image"
+                android:layout_margin="12dp"
+                android:background="@drawable/ic_edit_white_24dp" />
+
+        </LinearLayout>
+
+
+        <com.protectsoft.simplecam.PreviewImage.TouchImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/imagepreview"
+            />
+
+
+    </FrameLayout>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "23.0.3"
+    defaultConfig {
+        applicationId 'com.protectsoft.simplecam'
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 2
+        versionName "1"
+
+        ndk {
+            moduleName "JniBitmapOperationsLibrary"
+            ldLibs "log", "jnigraphics"
+            cFlags "-DANDROID_NDK_HOME"
+            stl "stlport_shared"
+        }
+    }
+
+
+    task buildNative(type: Exec, description: 'Compile JNI source via NDK') {
+        def ndkDir = android.ndkDirectory
+        commandLine "$ndkDir/ndk-build.cmd",
+                '-C', file('src/main/jni').absolutePath, // Change src/main/jni the relative path to your jni source
+                '-j', Runtime.runtime.availableProcessors(),
+                'all',
+                'NDK_DEBUG=1'
+    }
+
+
+    tasks.withType(JavaCompile) {
+        compileTask -> compileTask.dependsOn buildNative
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        create("all")
+    }
+}
+
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    
+    compile 'com.isseiaoki:simplecropview:1.1.4'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'me.grantland:autofittextview:0.2.1'
+    compile project(':library')
+    compile project(':library-recyclerview')
+
+    testCompile 'junit:junit:4.12'
+    compile 'junit:junit:4.12'
+    testCompile "org.mockito:mockito-core:1.9.5"
+}
