@@ -57,7 +57,6 @@ import java.util.TimerTask;
 public class MainActivity extends Activity {
 
     private Thread takePictureThread;
-    private static Thread drawerupdate;
 
     private Timer vidTimer;
 

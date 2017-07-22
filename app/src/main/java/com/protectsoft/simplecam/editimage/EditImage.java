@@ -1,7 +1,6 @@
 package com.protectsoft.simplecam.editimage;
 
 import android.app.Activity;
-import android.support.v7.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaScannerConnection;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -18,9 +18,9 @@ import android.widget.Toast;
 
 import com.protectsoft.simplecam.Constants;
 import com.protectsoft.simplecam.R;
+import com.protectsoft.simplecam.Utils.BitmapUtils;
 import com.protectsoft.simplecam.Utils.MediaFileUtils;
 import com.protectsoft.simplecam.bucket.BucketFiles;
-
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -84,6 +84,8 @@ public class EditImage extends Activity {
 
     private Target target;
 
+    private AsyncTask<File,Void,Bitmap> executor;
+
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -91,6 +93,7 @@ public class EditImage extends Activity {
 
         Intent intent = getIntent();
         currentFile = (File)intent.getExtras().get("file");
+        System.out.println(currentFile.getName());
 
         imageView = (ImageView)findViewById(R.id.mainImage);
 
@@ -171,12 +174,11 @@ public class EditImage extends Activity {
             imageViewYellowdark = (ImageView) findViewById(R.id.yellowdark);
             images.add(imageViewYellowdark);
 
-            new LoadImageEffects().execute(currentFile);
 
+        new LoadImageEffects().execute(currentFile);
 
         LinearLayout save = (LinearLayout)findViewById(R.id.save);
         save.bringToFront();
-
 
     }
 
@@ -840,8 +842,8 @@ public class EditImage extends Activity {
                 .centerInside()
                 .into(target);
 
-
     }
+
 
     public void brightness3(View v) {
         isChanged = true;
@@ -1971,20 +1973,19 @@ public class EditImage extends Activity {
 
         @Override
         protected Bitmap doInBackground(File... params) {
-            File file = params[0];
             return null;
         }
 
         protected  void onPostExecute(Bitmap result) {
 
+
+            final Bitmap bitmap = BitmapUtils.decodeSampledBitmapFromFile(currentFile,100,100);
             for(int i =0; i < images.size(); i++) {
 
                 final int finalI = i;
-
-
-                target = new Target() {
+                runOnUiThread(new Runnable() {
                     @Override
-                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                    public void run() {
                         if(finalI == 0) {
                             images.get(0).setImageBitmap(Effects.doInvert(bitmap));
                         } else if(finalI == 1) {
@@ -2056,31 +2057,11 @@ public class EditImage extends Activity {
                             images.get(28).setImageBitmap(bitmap);
                             ColorFilters.doColorFilterYellowDark(images.get(28),bitmap);
                         }
-
                     }
-
-                    @Override
-                    public void onBitmapFailed(Drawable errorDrawable) {
-
-                    }
-
-                    @Override
-                    public void onPrepareLoad(Drawable placeHolderDrawable) {
-
-                    }
-
-                };
-
-
-                Picasso.with(getApplicationContext())
-                        .load(currentFile)
-                        .resize(100, 100)
-                        .centerCrop()
-                        .into(target);
+                });
 
 
             }
-
 
         }
 
